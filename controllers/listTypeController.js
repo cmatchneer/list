@@ -5,6 +5,14 @@ module.exports ={
             res.json(response)
         })
     },
+    removeList: function(req, res){
+        var id = req.params.id
+        db.ListType.destroy({
+            where:{id:id}
+        }).then(function(response){
+            res.json(response);
+        })
+    },
     addToShoppingList:function(req,res){
         db.ShoppingItem.create(req.body).then(function(response){
             res.json(response)
@@ -41,6 +49,14 @@ module.exports ={
             where:{id:id}
         }).then(function(response){
             res.json(response)
+        })
+    },
+    removeItem: function(req ,res){
+        var id = req.params.id
+        db.ShoppingItem.destroy({
+            where:{id:id}
+        }).then(function(response){
+            res.json(response);
         })
     }
 

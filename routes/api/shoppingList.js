@@ -7,6 +7,7 @@ router.route("/")
 
 router.route("/:id")
     .get(shoppingListController.findShoppingList)
+    .delete(shoppingListController.removeItem);
     
     
     

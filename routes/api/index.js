@@ -4,6 +4,7 @@ const userRoutes = require("./users");
 const loginRoute = require("./login");
 const listTypeRoutes = require("./listType");
 const shoppingListRoutes = require("./shoppingList");
+const booksListRoutes = require("./booksList");
 
 router.use("/users", userRoutes);
 
@@ -12,6 +13,8 @@ router.use("/login", loginRoute);
 router.use("/listType", listTypeRoutes);
 
 router.use("/shoppingList", shoppingListRoutes);
+
+router.use("/books", booksListRoutes);
 
 
 router.use(function(req, res) {

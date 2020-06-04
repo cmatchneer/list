@@ -16,5 +16,15 @@ module.exports={
         }).then(function(respose){
             res.json(respose);
         })
+    },
+    itsDone:function(req,res){
+        var id = req.params.id;
+        db.CheckList.update({
+            done:true
+        },{
+            where:{id:id}
+        }).then(function(respose){
+            res.json(respose);
+        })
     }
 }

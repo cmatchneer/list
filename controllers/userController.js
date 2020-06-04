@@ -23,5 +23,16 @@ module.exports ={
         }).then(function(response) {
             res.json(response);
         });
-    }
+    },
+    allLists:function(req,res){
+        var id = req.params.id;
+        db.User.findAll({
+            where:{id:id},
+            include:[
+                db.ListType
+            ]
+        }).then(function(response){
+            res.json(response)
+        })
+    },
  }

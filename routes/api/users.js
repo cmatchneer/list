@@ -7,5 +7,7 @@ router.route("/")
 
 router.route("/:id")
   .get(userController.findEmailById)
+router.route("/userLists/:id")
+  .get(userController.allLists);
 
 module.exports = router;

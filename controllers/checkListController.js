@@ -26,5 +26,13 @@ module.exports={
         }).then(function(respose){
             res.json(respose);
         })
+    },
+    removeItem:function(req,res){
+        var id = req.params.id
+        db.CheckList.destroy({
+            where:{id:id}
+        }).then(function(respose){
+            res.json(respose);
+        })
     }
 }

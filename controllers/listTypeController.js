@@ -5,6 +5,7 @@ module.exports ={
             res.json(response)
         })
     },
+  
     removeList: function(req, res){
         var id = req.params.id
         db.ListType.destroy({

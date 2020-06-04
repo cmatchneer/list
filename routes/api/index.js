@@ -7,7 +7,8 @@ const shoppingListRoutes = require("./shoppingList");
 const booksListRoutes = require("./booksList");
 const checkListRoutes = require("./checkList");
 const gameListRoutes = require("./gameList");
-const collectablesListRoute = require("./collectablesList")
+const collectablesListRoute = require("./collectablesList");
+const wishListRoutes = require("./wishList");
 
 router.use("/users", userRoutes);
 
@@ -24,6 +25,8 @@ router.use("/checkList", checkListRoutes);
 router.use("/games", gameListRoutes)
 
 router.use("/collectables", collectablesListRoute)
+
+router.use("/wishList", wishListRoutes);
 
 
 router.use(function(req, res) {

@@ -1,0 +1,15 @@
+.link{
+    margin-left:15px;
+    font-weight: 400;
+}
+.jumbotron{
+    text-align: center;
+    background-color: brown;
+    color:black;
+}
+.lead{
+    font-weight: bold;
+}
+.display-4{
+    font-weight: bolder;
+}

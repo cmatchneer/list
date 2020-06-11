@@ -12,6 +12,7 @@ class Login extends Component {
           email: "",
           password:"",
           changePage:null
+          
         };
         redirect(){
             this.setState({changePage:"/profile"})
@@ -48,7 +49,7 @@ class Login extends Component {
         return(
             <div>
          
-          <form className="form-container">
+          {/* <form className="form-container">
           <div className="form-group">
             <label htmlFor="email"></label>
             <input
@@ -73,7 +74,7 @@ class Login extends Component {
             />
             <button onClick={this.handleFormSubmit} title="LOGIN" className="login-button">Login</button>
           </div>
-        </form>
+        </form> */}
         
         </div>
         )

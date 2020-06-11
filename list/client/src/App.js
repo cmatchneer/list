@@ -1,12 +1,14 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch,Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch,Redirect,Link,NavLink } from "react-router-dom";
 import Login from "./pages/login";
-// import SignUp from "./pages/signup";
-// import Profile from "./pages/profile";
-// import CreateList from "./pages/createList"
+import SignUp from "./pages/signup";
+import Profile from "./pages/profile";
+import CreateList from "./pages/createList"
 import API from "./utils/API"
+import Jumbotron from "./components/JumboTron"
 import logo from './logo.svg';
 import './App.css';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -28,34 +30,25 @@ class App extends React.Component {
       console.log(this.state.lists);
     })
   }
-  loginCheck = ()=>{
-    if(localStorage.getItem("id")!== null && this.state.login === false){
-      this.setState({backToLogin:null});
-      this.setState({login:true})
-      this.getLists(JSON.parse(localStorage.getItem("id")))
-    }
-  }
-  componentDidMount = ()=>{
-    // this.loginCheck();
-  }
+ 
 
-  componentDidUpdate = ()=>{ 
-    // this.getLists();
-  }
 
   render(){
+    console.log(this.state.login);
     return(
+      <div>
       
       <Router>
-        <div>hello
+      <Jumbotron login={this.state.login} getLists={()=>this.getLists(JSON.parse(localStorage.getItem("id")))}></Jumbotron>
         <Switch>
         <Route exact path="/" component={() => <Login loginCheck={this.loginCheck} />} />
               {/* <Route exact path="/signup" component={() => <SignUp loginCheck={this.loginCheck} />} />
               <Route exact path ="/createList"component={() => <CreateList  flights={this.flights} />} />
               <Route exact path ="/profile"component={() => <Profile  flights={this.flights} />} /> */}
       </Switch>
-      </div>
+      
     </Router>
+    </div>
     )
   }
 }

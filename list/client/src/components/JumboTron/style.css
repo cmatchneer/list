@@ -1,15 +1,40 @@
 .link{
     margin-left:15px;
+    padding-top:0px;
     font-weight: 400;
+    /* display: inline-block; */
+    float: left;
 }
 .jumbotron{
-    text-align: center;
+    /* text-align: center; */
     background-color: brown;
     color:black;
+    padding-bottom: 100px
+    
 }
 .lead{
     font-weight: bold;
+    margin-right:200px;
+    padding:0px;
+    display: inline-block;
 }
 .display-4{
     font-weight: bolder;
+    width: 50%;
+    margin: 0 auto;
+    /* float: left; */
+    text-align: center;
+    font-size:70px;
+    
+
+}
+.form-group{
+    width:50%;
+    /* float: right; */
+    /* display: inline-block; */
+}
+.form-control{
+    margin-bottom:0px;
+    padding: 0px;
+    display: inline-block;
 }

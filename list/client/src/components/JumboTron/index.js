@@ -71,42 +71,50 @@ class Jumbotron extends React.Component{
             return(
                 
         <div className="jumbotron">
-        <h1 className="display-4">List Maker</h1>
-        <p className="lead">This site is allows you to make and track various lists</p>
-        <p className="lead">
-          <Link class="link"to="/">Login</Link>
-          <Link class="link"to="/signup">Login</Link>
-          <Link class="link"to="/createList">Login</Link>
-          <Link class="link"to="/profile">Login</Link>
-        </p>
-        {this.state.login?
-       <button onClick={this.logout} id="logout">Log Out</button>
-        : <form className="form-container">
-        <div className="form-group">
-          <label htmlFor="email"></label>
-          <input
-            onChange={this.handleInputChange}
-            value={this.state.email}
-            name="email"
-            type="text"
-            className="form-control"
-            placeholder="Enter Email"
-            id="email"
-          />
-          <br />
-          <label htmlFor="password"></label>
-          <input
-            onChange={this.handleInputChange}
-            value={this.state.password}
-            name="password"
-            type="text"
-            className="form-control"
-            placeholder="Enter Password"
-            id="password"
-          />
-          <button onClick={this.handleFormSubmit} title="LOGIN" className="login-button">Login</button>
+            <div className="row">
+                <div className="col-md=4">
+                    <ul className="lead">
+                        <li><Link className="link"to="/">Login</Link></li>
+                        <li><Link className="link"to="/signup">Login</Link></li>
+                        <li><Link className="link"to="/createList">Login</Link></li>
+                        <li><Link className="link"to="/profile">Login</Link></li>
+                    </ul>
+                </div>
+                <div className="col-md-6">
+                    <h1 className="display-4">List Maker</h1>
+                </div>
+      
+                <div className="col-md-3">
+                    {this.state.login?
+                        <button onClick={this.logout} id="logout">Log Out</button>
+                        :<form className="form-container">
+                            <div className="form-group">
+                            <label htmlFor="email"></label>
+                            <input
+                                onChange={this.handleInputChange}
+                                value={this.state.email}
+                                name="email"
+                                type="text"
+                                className="form-control"
+                                placeholder="Enter Email"
+                                id="email"
+                            />
+          
+                            <label htmlFor="password"></label>
+                            <input
+                                onChange={this.handleInputChange}
+                                value={this.state.password}
+                                name="password"
+                                type="text"
+                                className="form-control"
+                                placeholder="Enter Password"
+                                id="password"
+                            />
+                            <button onClick={this.handleFormSubmit} title="LOGIN" className="login-button">Login</button>
+                        </div>
+                    </form>}
+            </div>
         </div>
-      </form>}
       </div>
     )
       }

@@ -42,9 +42,9 @@ class App extends React.Component {
       <Jumbotron login={this.state.login} getLists={()=>this.getLists(JSON.parse(localStorage.getItem("id")))}></Jumbotron>
         <Switch>
         <Route exact path="/" component={() => <Login loginCheck={this.loginCheck} />} />
-              {/* <Route exact path="/signup" component={() => <SignUp loginCheck={this.loginCheck} />} />
+              <Route exact path="/signup" component={() => <SignUp loginCheck={this.loginCheck} />} />
               <Route exact path ="/createList"component={() => <CreateList  flights={this.flights} />} />
-              <Route exact path ="/profile"component={() => <Profile  flights={this.flights} />} /> */}
+              <Route exact path ="/profile"component={() => <Profile  flights={this.flights} />} />
       </Switch>
       
     </Router>

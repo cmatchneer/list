@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import {Link,Redirect } from "react-router-dom";
 import API from "../../utils/API";
 import "./style.css";
+import Dropdown from 'react-bootstrap/Dropdown'
 
 class Jumbotron extends React.Component{
     constructor(props){
@@ -15,7 +16,12 @@ class Jumbotron extends React.Component{
         login:false,
       };
       redirect(){
+        if(this.state.changePage === null){
         this.setState({changePage:"/profile"})
+        }
+        else{
+            this.setState({changePage:"/"})
+        }
       }
     handleInputChange = event => {
         const { name, value } = event.target;
@@ -40,18 +46,16 @@ class Jumbotron extends React.Component{
             console.log(response);
             localStorage.clear();
             localStorage.setItem("id", response.data.id);
-           
-            // this.redirect();
+            this.redirect();
             this.loginCheck()
+           
         })}
       }
       loginCheck = ()=>{
         if(localStorage.getItem("id")!== null && this.state.login === false){
-          
           this.setState({backToLogin:null});
           this.setState({login:true})
           this.getLists(JSON.parse(localStorage.getItem("id")))
-          
         }
       }
       componentDidMount = ()=>{
@@ -67,17 +71,17 @@ class Jumbotron extends React.Component{
         this.setState({login: false});
       }
       render(){
-          console.log(this.state.login)
+        
             return(
                 
         <div className="jumbotron">
             <div className="row">
                 <div className="col-md=4">
                     <ul className="lead">
-                        <li><Link className="link"to="/">Login</Link></li>
-                        <li><Link className="link"to="/signup">Login</Link></li>
-                        <li><Link className="link"to="/createList">Login</Link></li>
-                        <li><Link className="link"to="/profile">Login</Link></li>
+                        <li><Link className="link"to="/">HomePage</Link></li>
+                        <li><Link className="link"to="/signup">Sign Up</Link></li>
+                        <li><Link className="link"to="/createList">Make A List</Link></li>
+                        <li><Link className="link"to="/profile">Profile</Link></li>
                     </ul>
                 </div>
                 <div className="col-md-6">
@@ -86,7 +90,7 @@ class Jumbotron extends React.Component{
       
                 <div className="col-md-3">
                     {this.state.login?
-                        <button onClick={this.logout} id="logout">Log Out</button>
+                       <Link className="link" to="/"><button onClick={this.logout} id="logout">Log Out</button> </Link> 
                         :<form className="form-container">
                             <div className="form-group">
                             <label htmlFor="email"></label>
@@ -110,7 +114,7 @@ class Jumbotron extends React.Component{
                                 placeholder="Enter Password"
                                 id="password"
                             />
-                            <button onClick={this.handleFormSubmit} title="LOGIN" className="login-button">Login</button>
+                           <button onClick={this.handleFormSubmit} className="login-button">Login</button>
                         </div>
                     </form>}
             </div>

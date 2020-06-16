@@ -16,7 +16,8 @@ class App extends React.Component {
     this.state = {
       lists:[],
       login:false,
-      backToLogin:null
+      backToLogin:null,
+      changePage:null
     }
   }
   getLists =(id)=>{
@@ -30,23 +31,29 @@ class App extends React.Component {
       console.log(this.state.lists);
     })
   }
+  redirect(){
+    if(this.state.changePage === null){
+    this.setState({changePage:"/profile"})
+    }
+  }
  
 
 
   render(){
-    console.log(this.state.login);
     return(
       <div>
       
       <Router>
-      <Jumbotron login={this.state.login} getLists={()=>this.getLists(JSON.parse(localStorage.getItem("id")))}></Jumbotron>
+        
+      <Jumbotron login={this.state.login} getLists={()=>this.getLists(JSON.parse(localStorage.getItem("id")))} redirect ={()=> this.redirect()}></Jumbotron>
         <Switch>
         <Route exact path="/" component={() => <Login loginCheck={this.loginCheck} />} />
               <Route exact path="/signup" component={() => <SignUp loginCheck={this.loginCheck} />} />
               <Route exact path ="/createList"component={() => <CreateList  flights={this.flights} />} />
               <Route exact path ="/profile"component={() => <Profile  flights={this.flights} />} />
       </Switch>
-      
+        
+      {this.state.changePage?<Redirect to={this.state.changePage} />:console.log("test")}
     </Router>
     </div>
     )

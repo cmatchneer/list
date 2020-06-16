@@ -7,22 +7,15 @@ import Dropdown from 'react-bootstrap/Dropdown'
 class Jumbotron extends React.Component{
     constructor(props){
         super(props)
-        this.getLists = () => props.getLists(JSON.parse(localStorage.getItem("id"))) 
+        this.getLists = () => props.getLists(JSON.parse(localStorage.getItem("id")))
+        this.redirect = () => props.redirect() 
       }
       state = {
         email: "",
         password:"",
-        changePage:null,
-        login:false,
+        login:false
       };
-      redirect(){
-        if(this.state.changePage === null){
-        this.setState({changePage:"/profile"})
-        }
-        else{
-            this.setState({changePage:"/"})
-        }
-      }
+     
     handleInputChange = event => {
         const { name, value } = event.target;
         this.setState({
@@ -67,7 +60,6 @@ class Jumbotron extends React.Component{
       }
       logout = ()=>{
         localStorage.clear();
-        // this.redirect();
         this.setState({login: false});
       }
       render(){

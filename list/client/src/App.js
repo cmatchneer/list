@@ -28,18 +28,20 @@ class App extends React.Component {
         userLists.push(response.data[0].ListTypes[i]);
       }
       this.setState({lists:userLists})
-      console.log(this.state.lists);
     })
   }
   redirect(){
     if(this.state.changePage === null){
     this.setState({changePage:"/profile"})
+    }else{
+      this.setState({changePage:null})
     }
   }
  
 
 
   render(){
+    
     return(
       <div>
       
@@ -53,7 +55,7 @@ class App extends React.Component {
               <Route exact path ="/profile"component={() => <Profile  flights={this.flights} />} />
       </Switch>
         
-      {this.state.changePage?<Redirect to={this.state.changePage} />:console.log("test")}
+      {this.state.changePage?<Redirect to={this.state.changePage} />:<Redirect to="/"/>}
     </Router>
     </div>
     )

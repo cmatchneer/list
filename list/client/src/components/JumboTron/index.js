@@ -60,7 +60,10 @@ class Jumbotron extends React.Component{
       }
       logout = ()=>{
         localStorage.clear();
+        this.setState({email:""});
+        this.setState({password:""})
         this.setState({login: false});
+        this.redirect();
       }
       render(){
         
@@ -82,7 +85,7 @@ class Jumbotron extends React.Component{
       
                 <div className="col-md-3">
                     {this.state.login?
-                       <Link className="link" to="/"><button onClick={this.logout} id="logout">Log Out</button> </Link> 
+                      <button onClick={this.logout} id="logout">Log Out</button>
                         :<form className="form-container">
                             <div className="form-group">
                             <label htmlFor="email"></label>

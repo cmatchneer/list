@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import Button from "../components/Button";
-import API from "../utils/API";
+
 import {BrowserRouter as Router, Redirect,Link} from 'react-router-dom';
 import "./style.css";
 class Login extends Component {

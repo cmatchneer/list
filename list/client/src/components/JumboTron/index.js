@@ -8,7 +8,8 @@ class Jumbotron extends React.Component{
     constructor(props){
         super(props)
         this.getLists = () => props.getLists(JSON.parse(localStorage.getItem("id")))
-        this.redirect = () => props.redirect() 
+        this.redirect = () => props.redirect()
+        
       }
       state = {
         email: "",
@@ -66,8 +67,7 @@ class Jumbotron extends React.Component{
         this.redirect();
       }
       render(){
-        
-            return(
+        return(
                 
         <div className="jumbotron">
             <div className="row">

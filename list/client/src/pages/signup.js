@@ -24,6 +24,7 @@ class Signup extends Component {
         
     }
     loginCheck(){
+        console.log(this.props);
         let id =JSON.parse(localStorage.getItem("id"))
        
         if(id === null && this.state.signIn){

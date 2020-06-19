@@ -10,5 +10,8 @@ export default{
     },
     userList(userId){
         return axios.get("/api/users/userLists/" + userId)
+    },
+    createList(listInfo){
+        return axios.post("/api/listType",listInfo)
     }
 }

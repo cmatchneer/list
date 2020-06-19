@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../utils/API";
+import {BrowserRouter as Router, Redirect,Link} from "react-router-dom";
 
 
 class Profile extends Component {
@@ -30,6 +31,7 @@ class Profile extends Component {
             userLists.push(response.data[0].ListTypes[i]);
           }
           this.setState({lists:userLists})
+          this.setState({loggedIn:false})
           console.log(this.state.lists);
         })
         }

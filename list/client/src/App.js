@@ -32,6 +32,7 @@ class App extends React.Component {
     })
   }
   redirect(){
+    console.log(this.state.changePage);
     if(this.state.changePage === null){
     this.setState({changePage:"/profile"})
     }else{

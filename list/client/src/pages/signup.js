@@ -16,19 +16,16 @@ class Signup extends Component {
     };
     signedIn = ()=> {
         let id =JSON.parse(localStorage.getItem("id"))
-        console.log(id);
-        
+
         if(id && this.state.signIn){
             this.setState({signIn:false})
-            console.log("TEST");
-            console.log(this.state.signIn);
+          
         }
         
     }
     loginCheck(){
         let id =JSON.parse(localStorage.getItem("id"))
-        console.log(id);
-        console.log(this.state.signIn);
+       
         if(id === null && this.state.signIn){
             this.setState({signIn:false})
         }

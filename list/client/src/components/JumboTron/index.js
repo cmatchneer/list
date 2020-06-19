@@ -2,7 +2,7 @@ import React from "react";
 import {Link,Redirect } from "react-router-dom";
 import API from "../../utils/API";
 import "./style.css";
-import Dropdown from 'react-bootstrap/Dropdown'
+
 
 class Jumbotron extends React.Component{
     constructor(props){

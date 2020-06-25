@@ -16,5 +16,8 @@ export default{
     },
     getBookList(id){
         return axios.get("/api/books/"+ id)
+    },
+    addBook(bookInfo){
+        return axios.post("/api/books", bookInfo)
     }
 }

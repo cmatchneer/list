@@ -25,5 +25,17 @@ export default{
     },
     purchasedBook(id){
         return axios.put("/api/books/purchased/"+id)
+    },
+    getCheckList(id){
+        return axios.get("/api/checkList/"+id)
+    },
+    addToCheckList(newItem){
+        return axios.post("/api/checkList", newItem)
+    },
+    deleteFromCheckList(id){
+        return axios.delete("/api/checkList/"+id)
+    },
+    completedCheckListItem(id){
+        return axios.put("/api/checkList/"+id)
     }
 }

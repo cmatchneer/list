@@ -7,15 +7,15 @@ class EachBook extends React.Component{
         super(props)
         
     }
-    changeCheck = ()=> this.setState({changesMade:false})
+    
     deleteBook = (id)=>{
         API.deleteBook(id).then(response =>{
             console.log(response)
             this.setState({changesMade:true})
         })
     }
-    purchasedBook =()=>{
-        API.purchasedBook(this.props.id).then(response=>{
+    purchasedBook =(id)=>{
+        API.purchasedBook(id).then(response=>{
             console.log(response)
             this.setState({changesMade:true})
         })

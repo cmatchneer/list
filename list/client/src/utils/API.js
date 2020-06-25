@@ -19,5 +19,11 @@ export default{
     },
     addBook(bookInfo){
         return axios.post("/api/books", bookInfo)
+    },
+    deleteBook(id){
+        return axios.delete("/api/books/"+id)
+    },
+    purchasedBook(id){
+        return axios.put("/api/books/purchased/"+id)
     }
 }

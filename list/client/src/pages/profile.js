@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from "../utils/API";
 import {BrowserRouter as Router, Redirect,Link} from "react-router-dom";
-import ListItems from "../components/ListMaker"
+import ListMaker from "../components/ListMaker"
 
 
 class Profile extends Component {
@@ -51,14 +51,14 @@ render(){
             {this.state.loggedIn?<p>need to login</p>
            
             : 
-            this.state.lists.map( list =>{
+            this.state.lists.map(list =>{
                     // console.log(list)
                     return(<div>
                         <h2>{list.listName}</h2>
-                        <ListItems
-                        id={list.id}
-                        category={list.category}
-                        key={list.id}
+                        <ListMaker
+                            id={list.id}
+                            category={list.category}
+                            key={list.id}
                         />
                     </div>)
                 })

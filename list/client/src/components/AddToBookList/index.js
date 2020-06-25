@@ -16,13 +16,12 @@ class AddToBookList extends React.Component{
         let bookInfo ={
             title:this.state.title,
             author:this.state.author,
-            genre:this.state.author,
+            genre:this.state.genre,
             finished:this.state.finished,
             userId:JSON.parse(localStorage.getItem("id")),
             ListTypeId:this.props.id
         }
         API.addBook(bookInfo).then(response =>{
-            console.log(response)
             this.setState({title:""});
             this.setState({author:""});
             this.setState({genre:""});
@@ -40,16 +39,6 @@ class AddToBookList extends React.Component{
     handleFormSubmit = event => {
         event.preventDefault();
         this.addBook();
-        // const loginInfo = {
-        //     email: this.state.emailAddress,
-        //     password: this.state.password
-        // }
-        // API.signUp(loginInfo)
-        // .then(res => {
-        //     localStorage.clear();
-        //     localStorage.setItem("id", res.data.id);
-        //     this.setState({signIn:true})
-        // }); 
     };
     render(){
         return(<div>

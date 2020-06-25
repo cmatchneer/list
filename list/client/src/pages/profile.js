@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import API from "../utils/API";
 import {BrowserRouter as Router, Redirect,Link} from "react-router-dom";
+import ListItems from "../components/ListMaker"
 
 
 class Profile extends Component {
@@ -16,11 +17,13 @@ class Profile extends Component {
         loggedIn:false
     };
     componentDidMount = ()=>{
-        this.getLists(JSON.parse(localStorage.getItem("id")))
+        this.getLists(JSON.parse(localStorage.getItem("id")));
+        this.loggedOut()
         
       }
+      
       getLists =(id)=>{
-          console.log(id);
+          
         const userLists = []
         if(!id){
             this.setState({loggedIn:true})
@@ -32,16 +35,34 @@ class Profile extends Component {
           }
           this.setState({lists:userLists})
           this.setState({loggedIn:false})
-          console.log(this.state.lists);
+          
         })
         }
       }
+      loggedOut = ()=>{
+          if(!this.state.loggedIn){
+              this.setState({lists:[]})
+          }
+      }
+    
 render(){
     return(
         <div>
             {this.state.loggedIn?<p>need to login</p>
            
-            :  <p>profile</p>}
+            : 
+            this.state.lists.map( list =>{
+                    // console.log(list)
+                    return(<div>
+                        <h2>{list.listName}</h2>
+                        <ListItems
+                        id={list.id}
+                        category={list.category}
+                        key={list.id}
+                        />
+                    </div>)
+                })
+            }
         </div>
     )
 }

@@ -13,5 +13,8 @@ export default{
     },
     createList(listInfo){
         return axios.post("/api/listType",listInfo)
+    },
+    getBookList(id){
+        return axios.get("/api/books/"+ id)
     }
 }

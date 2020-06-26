@@ -4,6 +4,8 @@ import AddToBookList from "../AddToBookList";
 import EachBook from "../EachBook";
 import AddToCheckList from "../AddToCheckList"
 import EachCheckListItem from"../EachCheckListItem"
+import AddCollectable from "../AddCollectable"
+import EachCollectable from"../EachCollectable"
 import "./style.css";
 
 class ListMaker extends React.Component{
@@ -26,14 +28,16 @@ class ListMaker extends React.Component{
             case "Check List":
             this.checkList(this.props.id);
             break;
+            case "Collectables":
+            this.collectables(this.props.id)
+            break;
         }
     }
     bookList = (id)=>{
         let bookList = []
         API.getBookList(id).then(response =>{
             for(let i=0; i< response.data[0].Books.length;i++){
-            bookList.push(response.data[0].Books[i])
-            
+            bookList.push(response.data[0].Books[i]) 
         }
             this.setState({item:bookList})
         })
@@ -45,6 +49,15 @@ class ListMaker extends React.Component{
                 checkList.push(response.data[0].CheckLists[i])
             }
             this.setState({item:checkList})
+        })
+    }
+    collectables =(id)=>{
+        let collectables=[]
+        API.getCollectablesList(id).then(response =>{
+            for(let i=0;i<response.data[0].Collectables.length;i++){
+                collectables.push(response.data[0].Collectables[i])
+            }
+            this.setState({item:collectables})
         })
     }
    
@@ -76,17 +89,35 @@ class ListMaker extends React.Component{
                 {this.state.item.map(item =>{
                     if(this.props.category === "Check List"){
                         return(<div>
-                                <EachCheckListItem
+                                 <EachCheckListItem
                                     id={item.id}
                                     task={item.task}
                                     done={item.done}
                                 />
-                              
                                 </div>)
                         }
                 })}
                 <AddToCheckList id={this.props.id}/>
             </div>)
+        }
+        if(this.props.category==="Collectables"){
+            return(<div>
+                  <h4>{this.props.category}</h4>
+                {this.state.item.map(item =>{
+                    if(this.props.category === "Collectables"){
+                        return(<div>
+                                 <EachCollectable
+                                    id={item.id}
+                                    itemName={item.itemName}
+                                    itemType={item.itemType}
+                                    limitedEdition={item.limitedEdition}
+                                />
+                                </div>)
+                        }
+                })}
+                <AddCollectable id={this.props.id}/>
+            </div>
+            )
         }
         return(<div>
         </div>)

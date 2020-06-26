@@ -1,5 +1,6 @@
 import axios from "axios"
 import { func } from "prop-types";
+import AddCollectable from "../components/AddCollectable";
 
 export default{
     login(userInfo){
@@ -37,5 +38,14 @@ export default{
     },
     completedCheckListItem(id){
         return axios.put("/api/checkList/"+id)
+    },
+    getCollectablesList(id){
+        return axios.get("/api/collectables/"+id)
+    },
+    addCollectable(collectable){
+        return axios.post("/api/collectables",collectable)
+    },
+    deleteCollectable(id){
+        return axios.delete("/api/collectables/"+id)
     }
 }

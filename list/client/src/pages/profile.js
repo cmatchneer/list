@@ -7,7 +7,7 @@ import ListMaker from "../components/ListMaker"
 class Profile extends Component {
     constructor(props){
         super(props)
-    //   this.getLists = () => props.getLists(JSON.parse(localStorage.getItem("id")))
+    
        
       }
     state = {

@@ -7,7 +7,7 @@ import "./style.css";
 class Jumbotron extends React.Component{
     constructor(props){
         super(props)
-        this.getLists = () => props.getLists(JSON.parse(localStorage.getItem("id")))
+        
         this.redirect = () => props.redirect()
         
       }
@@ -47,9 +47,9 @@ class Jumbotron extends React.Component{
       }
       loginCheck = ()=>{
         if(localStorage.getItem("id")!== null && this.state.login === false){
-          this.setState({backToLogin:null});
+          
           this.setState({login:true})
-          this.getLists(JSON.parse(localStorage.getItem("id")))
+         
         }
       }
       componentDidMount = ()=>{
@@ -112,6 +112,7 @@ class Jumbotron extends React.Component{
                            <button onClick={this.handleFormSubmit} className="login-button">Login</button>
                         </div>
                     </form>}
+                    {this.props.changePage?<Redirect to="/"/>:<Redirect to={this.state.changePage} />}
             </div>
         </div>
       </div>

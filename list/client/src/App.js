@@ -14,33 +14,29 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      lists:[],
-      login:false,
-      backToLogin:null,
-      changePage:null
+     
+      login:false
     }
   }
-  getLists =(id)=>{
-    console.log(id);
-   
-      const userLists = []
-      API.userList(id).then(response =>{
-       console.log(response)
-        for(let i = 0; i < response.data[0].ListTypes.length; i++){
-         userLists.push(response.data[0].ListTypes[i]);
-        }
-        this.setState({lists:userLists})
-        console.log(this.state.lists);
-      })
-    
-  }
+ componentDidMount(){
+  
+  console.log(this.state.login)
+ }
   redirect(){
-    console.log(this.state.changePage);
-    if(this.state.changePage === null){
-    this.setState({changePage:"/profile"})
-    }else{
-      this.setState({changePage:null})
+    
+    
+    if(!this.state.login ){
+      console.log("profile test");
+    
+    this.setState({login:true})
+    console.log(this.state.login)
     }
+    if(this.state.login && localStorage.getItem("id")=== null){
+      console.log("test");
+      this.setState({login:false})
+      console.log(this.state.login)
+    }
+    console.log(this.state.login)
   }
   render(){
     
@@ -49,15 +45,15 @@ class App extends React.Component {
       
       <Router>
         
-      <Jumbotron getLists={()=>this.getLists(JSON.parse(localStorage.getItem("id")))} redirect ={()=> this.redirect()}></Jumbotron>
+      <Jumbotron  redirect ={()=> this.redirect()} changePage={this.state.changePage}></Jumbotron>
         <Switch>
         <Route exact path="/" component= {Login}/>
               <Route exact path="/signup" component={() => <SignUp loginCheck={this.loginCheck} />} />
               <Route exact path ="/createList"component={() => <CreateList  flights={this.flights} />} />
-              <Route exact path ="/profile"component={() => <Profile getLists={()=>this.getLists(JSON.parse(localStorage.getItem("id")))} />} />
+              <Route exact path ="/profile"component={() => <Profile />} />
       </Switch>
         
-      {this.state.changePage?<Redirect to={this.state.changePage} />:<Redirect to="/"/>}
+      {this.state.login?<Redirect to="/profile" />:<Redirect to="/"/>}
     </Router>
     </div>
     )

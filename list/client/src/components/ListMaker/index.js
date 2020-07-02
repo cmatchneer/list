@@ -8,6 +8,8 @@ import AddCollectable from "../AddCollectable"
 import EachCollectable from"../EachCollectable"
 import AddGame from "../AddGame"
 import EachGame from "../EachGame"
+import AddToShoppingList from "../AddToShoppingList"
+import EachShoppingItem from "../EachShoppingItem"
 import "./style.css";
 
 class ListMaker extends React.Component{
@@ -36,7 +38,19 @@ class ListMaker extends React.Component{
             case "Game List":
             this.gameList(this.props.id)
             break;
+            case "ShoppingList":
+            this.shoppingList(this.props.id)
+            break
         }
+    }
+    shoppingList =(id)=>{
+        let shoppingList=[]
+        API.getShoppingList(id).then(response=>{
+            for(let i=0;i<response.data[0].ShoppingItems.length;i++){
+                shoppingList.push(response.data[0].ShoppingItems[i])
+            }
+            this.setState({item:shoppingList})
+        })
     }
     gameList =(id) =>{
         let gameList=[]
@@ -152,6 +166,25 @@ class ListMaker extends React.Component{
                     }
                 })}
                 <AddGame id={this.props.id}/>
+            </div>)
+        }
+        if(this.props.category=== "ShoppingList"){
+            return(<div>
+                <h4>{this.props.category}</h4>
+                {this.state.item.map(item =>{
+                    if(this.props.category === "ShoppingList"){
+                        console.log(item)
+                        return(<div>
+                            <EachShoppingItem
+                                id ={item.id}
+                                amount={item.amount}
+                                purchased={item.purchased}
+                                name={item.itemName}
+                                />
+                        </div>)
+                    }
+                })}
+                <AddToShoppingList id={this.props.id}/>
             </div>)
         }
         return(<div>

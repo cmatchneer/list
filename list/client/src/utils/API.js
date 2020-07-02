@@ -59,5 +59,17 @@ export default{
     },
     getGamesList(id){
         return axios.get("/api/games/"+id)
+    },
+    addToShoppingList(item){
+        return axios.post("/api/shoppingList", item)
+    },
+    getShoppingList(id){
+        return axios.get("/api/shoppingList/"+id)
+    },
+    deleteShoppingItem(id){
+        return axios.delete("/api/shoppingList/"+id)
+    },
+    purchasedShoppingItem(id){
+        return axios.put("/api/shoppingList/purchased/"+id)
     }
 }

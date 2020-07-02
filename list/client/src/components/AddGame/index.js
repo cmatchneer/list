@@ -53,7 +53,7 @@ class AddGame extends React.Component{
     render(){
         return(<div>
              <form>
-                <div className="sign-up-header">Add a Collectable</div>
+                <div className="sign-up-header">Add a Game</div>
 
                     <div className="form-group">
                         <input

@@ -71,5 +71,17 @@ export default{
     },
     purchasedShoppingItem(id){
         return axios.put("/api/shoppingList/purchased/"+id)
+    },
+    addToWishList(item){
+        return axios.post("/api/wishList",item)
+    },
+    getWishList(id){
+        return axios.get("/api/wishList/"+id)
+    },
+    deleteFromWishList(id){
+        return axios.delete("/api/wishList/"+id)
+    },
+    boughtFromWishList(id){
+        return axios.put("/api/wishList/"+id)
     }
 }

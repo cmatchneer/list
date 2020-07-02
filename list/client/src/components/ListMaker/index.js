@@ -10,6 +10,8 @@ import AddGame from "../AddGame"
 import EachGame from "../EachGame"
 import AddToShoppingList from "../AddToShoppingList"
 import EachShoppingItem from "../EachShoppingItem"
+import AddToWishList from "../AddToWishList"
+import EachWishListItem from "../EachWishListItem"
 import "./style.css";
 
 class ListMaker extends React.Component{
@@ -40,8 +42,20 @@ class ListMaker extends React.Component{
             break;
             case "ShoppingList":
             this.shoppingList(this.props.id)
-            break
+            break;
+            case "Wish List":
+            this.wishList(this.props.id)
+            break;
         }
+    }
+    wishList(id){
+        let wishList =[]
+        API.getWishList(id).then(response=>{
+            for(let i=0;i<response.data[0].WishLists.length;i++){
+                wishList.push(response.data[0].WishLists[i])
+            }
+            this.setState({item:wishList})
+        })
     }
     shoppingList =(id)=>{
         let shoppingList=[]
@@ -105,7 +119,7 @@ class ListMaker extends React.Component{
                                     finished={item.finished}
                                     genre={item.genre}
                                     title={item.title}
-                                   />
+                                />
                                 </div>)
                         }
                 })}
@@ -159,7 +173,8 @@ class ListMaker extends React.Component{
                                 id ={item.id}
                                 owned={item.owned}
                                 title={item.title}
-                                type={item.type}/>
+                                type={item.type}
+                            />
                         </div>)
                         
 
@@ -173,18 +188,37 @@ class ListMaker extends React.Component{
                 <h4>{this.props.category}</h4>
                 {this.state.item.map(item =>{
                     if(this.props.category === "ShoppingList"){
-                        console.log(item)
                         return(<div>
                             <EachShoppingItem
                                 id ={item.id}
                                 amount={item.amount}
                                 purchased={item.purchased}
                                 name={item.itemName}
-                                />
+                            />
                         </div>)
                     }
                 })}
                 <AddToShoppingList id={this.props.id}/>
+            </div>)
+        }
+        if(this.props.category=== "Wish List"){
+            return(<div>
+                <h4>{this.props.category}</h4>
+                {this.state.item.map(item =>{
+                    if(this.props.category === "Wish List"){
+                        
+                        return(<div>
+                            <EachWishListItem
+                                id ={item.id}
+                                category={item.category}
+                                type={item.itemType}
+                                name={item.itemName}
+                                done={item.purchased}
+                            />
+                        </div>)
+                    }
+                })}
+                <AddToWishList id={this.props.id}/>
             </div>)
         }
         return(<div>

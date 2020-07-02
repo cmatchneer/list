@@ -2,37 +2,41 @@ import React from "react";
 import API from "../../utils/API";
 import "./style.css";
 
-class EachShoppingItem extends React.Component{
+class EachWishListItem extends React.Component{
     constructor(props){
         super(props)
         
     }
     deleteItem = (id) =>{
-        API.deleteShoppingItem(id).then(response =>{
+        API.deleteFromWishList(id).then(response =>{
             console.log(response)
         })
     }
     purchasedItem = (id) =>{
-       
-        API.purchasedShoppingItem(id).then(response =>{
+        console.log(id);
+        API.boughtFromWishList(id).then(response =>{
             console.log(response)
         })
     }
     render(){
-        
+        console.log(this.props)
         return(<div>
-            {this.props.purchased?
-                <div style={{backgroundColor: "green"}}>
+            {this.props.done?
+                <div>
                     <h4>{this.props.name}</h4>
-                    <p>Bought</p>
+                    <p>{this.props.type}</p>
+                    <p>{this.props.category}</p>
+                    <p>Done</p>
                     <button onClick={()=>this.deleteItem(this.props.id)}>Delete</button>
                 </div>
             :
-                <div style={{backgroundColor: "red"}}>
+                <div>
                     <h4>{this.props.name}</h4>
-                    <p>{this.props.amount}</p>
+                    <p>{this.props.type}</p>
+                    <p>{this.props.category}</p>
+                    <p>not done</p>
                     <button onClick={()=>this.deleteItem(this.props.id)}>Delete</button>
-                    <button onClick={()=>this.purchasedItem(this.props.id)}>Owned</button>
+                    <button onClick={()=>this.purchasedItem(this.props.id)}>Buy</button>
                 </div>
             }
 
@@ -40,4 +44,4 @@ class EachShoppingItem extends React.Component{
     }
 
 }
-export default EachShoppingItem
+export default EachWishListItem

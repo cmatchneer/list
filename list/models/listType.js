@@ -12,9 +12,11 @@ module.exports = function(sequelize, DataTypes) {
     })
     ListType.associate = function(models) {
         ListType.belongsTo(models.User, {
+            onDelete: "cascade",
             foreignKey: {
                 allowNull: false
-            }
+            },
+            hooks:true
         });
         ListType.hasMany(models.ShoppingItem, {
             onDelete: "cascade"

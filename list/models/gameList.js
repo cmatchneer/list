@@ -20,9 +20,11 @@ module.exports = function(sequelize, DataTypes) {
     })
     Games.associate = function(models) {
         Games.belongsTo(models.ListType, {
+            onDelete: "cascade",
             foreignKey: {
                 allowNull: false
-            }
+            },
+            hooks:true
         });
     }
     return Games

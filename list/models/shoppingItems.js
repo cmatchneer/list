@@ -25,9 +25,11 @@ module.exports = function(sequelize, DataTypes) {
     });
     ShoppingItem.associate = function(models) {
         ShoppingItem.belongsTo(models.ListType, {
+            onDelete: "cascade",
             foreignKey: {
                 allowNull: false
-            }
+            },
+            hooks:true
         });
 
 

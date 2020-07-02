@@ -103,6 +103,11 @@ class ListMaker extends React.Component{
             this.setState({item:collectables})
         })
     }
+    deleteList =(id)=>{
+        API.deleteList(id).then(response=>{
+            console.log(response)
+        })
+    }
    
     render(){
         
@@ -123,7 +128,8 @@ class ListMaker extends React.Component{
                                 </div>)
                         }
                 })}
-                <AddToBookList id={this.props.id}/>
+                <AddToBookList id={this.props.id} />
+                <button onClick={()=>this.deleteList(this.props.id)}>Delete</button>
             </div>)
         }
         if(this.props.category === "Check List"){
@@ -140,7 +146,9 @@ class ListMaker extends React.Component{
                                 </div>)
                         }
                 })}
-                <AddToCheckList id={this.props.id}/>
+                <AddToCheckList id={this.props.id} />
+                <button onClick={()=>this.deleteList(this.props.id)}>Delete</button>
+                
             </div>)
         }
         if(this.props.category==="Collectables"){
@@ -159,6 +167,7 @@ class ListMaker extends React.Component{
                         }
                 })}
                 <AddCollectable id={this.props.id}/>
+                <button onClick={()=>this.deleteList(this.props.id)}>Delete</button>
             </div>
             )
         }
@@ -176,11 +185,10 @@ class ListMaker extends React.Component{
                                 type={item.type}
                             />
                         </div>)
-                        
-
                     }
                 })}
                 <AddGame id={this.props.id}/>
+                <button onClick={()=>this.deleteList(this.props.id)}>Delete</button>
             </div>)
         }
         if(this.props.category=== "ShoppingList"){
@@ -199,6 +207,7 @@ class ListMaker extends React.Component{
                     }
                 })}
                 <AddToShoppingList id={this.props.id}/>
+                <button onClick={()=>this.deleteList(this.props.id)}>Delete</button>
             </div>)
         }
         if(this.props.category=== "Wish List"){
@@ -219,6 +228,7 @@ class ListMaker extends React.Component{
                     }
                 })}
                 <AddToWishList id={this.props.id}/>
+                <button onClick={()=>this.deleteList(this.props.id)}>Delete</button>
             </div>)
         }
         return(<div>

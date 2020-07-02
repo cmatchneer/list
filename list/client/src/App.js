@@ -21,15 +21,18 @@ class App extends React.Component {
     }
   }
   getLists =(id)=>{
-    const userLists = []
-    API.userList(id).then(response =>{
-      // console.log(response.data[0].ListTypes)
-      for(let i = 0; i < response.data[0].ListTypes.length; i++){
-        userLists.push(response.data[0].ListTypes[i]);
-      }
-      this.setState({lists:userLists})
-      console.log(this.state.lists);
-    })
+    console.log(id);
+   
+      const userLists = []
+      API.userList(id).then(response =>{
+       console.log(response)
+        for(let i = 0; i < response.data[0].ListTypes.length; i++){
+         userLists.push(response.data[0].ListTypes[i]);
+        }
+        this.setState({lists:userLists})
+        console.log(this.state.lists);
+      })
+    
   }
   redirect(){
     console.log(this.state.changePage);

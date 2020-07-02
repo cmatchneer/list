@@ -12,6 +12,9 @@ export default{
     userList(userId){
         return axios.get("/api/users/userLists/" + userId)
     },
+    deleteList(id){
+        return axios.delete("/api/listType/"+id)
+    },
     createList(listInfo){
         return axios.post("/api/listType",listInfo)
     },

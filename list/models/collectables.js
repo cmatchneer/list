@@ -19,9 +19,11 @@ module.exports = function(sequelize, DataTypes) {
     })
     Collectables.associate = function(models) {
         Collectables.belongsTo(models.ListType, {
+            onDelete: "cascade",
             foreignKey: {
                 allowNull: false
-            }
+            },
+            hooks:true
         });
     }
     return Collectables

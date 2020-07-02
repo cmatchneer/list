@@ -16,9 +16,11 @@ module.exports = function(sequelize, DataTypes) {
     })
     CheckList.associate = function(models) {
         CheckList.belongsTo(models.ListType, {
+            onDelete: "cascade",
             foreignKey: {
                 allowNull: false
-            }
+            },
+            hooks:true
         });
     }
     return CheckList

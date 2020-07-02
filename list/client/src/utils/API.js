@@ -47,5 +47,17 @@ export default{
     },
     deleteCollectable(id){
         return axios.delete("/api/collectables/"+id)
+    },
+    deleteGame(id){
+        return axios.delete("/api/games/"+id)
+    },
+    addGame(game){
+        return axios.post("/api/games",game)
+    },
+    purchasedGame(id){
+        return axios.put("/api/games/owned/"+id)
+    },
+    getGamesList(id){
+        return axios.get("/api/games/"+id)
     }
 }

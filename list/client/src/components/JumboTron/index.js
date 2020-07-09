@@ -112,7 +112,7 @@ class Jumbotron extends React.Component{
                            <button onClick={this.handleFormSubmit} className="login-button">Login</button>
                         </div>
                     </form>}
-                    {this.props.changePage?<Redirect to="/"/>:<Redirect to={this.state.changePage} />}
+                    
             </div>
         </div>
       </div>

@@ -45,10 +45,10 @@ class App extends React.Component {
       
       <Router>
         
-      <Jumbotron  redirect ={()=> this.redirect()} changePage={this.state.changePage}></Jumbotron>
+      <Jumbotron  redirect ={()=> this.redirect()} login={this.state.login} ></Jumbotron>
         <Switch>
         <Route exact path="/" component= {Login}/>
-              <Route exact path="/signup" component={() => <SignUp loginCheck={this.loginCheck} />} />
+              <Route exact path="/signup" component={() => <SignUp redirect ={()=> this.redirect()} login={this.state.login} />} />
               <Route exact path ="/createList"component={() => <CreateList  flights={this.flights} />} />
               <Route exact path ="/profile"component={() => <Profile />} />
       </Switch>

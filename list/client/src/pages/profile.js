@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import API from "../utils/API";
 import {BrowserRouter as Router, Redirect,Link} from "react-router-dom";
 import ListMaker from "../components/ListMaker"
+import "./style.css";
 
 
 class Profile extends Component {
@@ -52,14 +53,18 @@ render(){
            
             : 
             this.state.lists.map(list =>{
-                    // console.log(list)
+                    console.log(list)
                     return(<div>
-                        <h2>{list.listName}</h2>
-                        <ListMaker
-                            id={list.id}
-                            category={list.category}
-                            key={list.id}
-                        />
+                        <div class="dropdown">
+                            <h2>{list.listName}</h2>
+                            <div class="dropdown-content">
+                                <ListMaker
+                                    id={list.id}
+                                    category={list.category}
+                                    key={list.id}
+                                />
+                            </div>
+                        </div>
                     </div>)
                 })
             }

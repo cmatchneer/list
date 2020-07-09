@@ -73,7 +73,7 @@ class Signup extends Component {
             <div className="sign-up-container">
             {this.props.login?<div>
                <h2>Welcome to the Make a List App lets get you making lists</h2>
-               <Link id= "signUpLandingPage"className="link"to="/createList"> <button onClick = {this.signedIn} id= "signUpLandingPage" >Sign Up</button> </Link>
+               <Link id= "signUpLandingPage"className="link"to="/createList"> <button onClick = {this.signedIn} id= "signUpLandingPage" >Make a List</button> </Link>
                </div>
                :
                 <form>

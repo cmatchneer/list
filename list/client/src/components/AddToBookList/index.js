@@ -45,9 +45,9 @@ class AddToBookList extends React.Component{
         
         return(<div>
              <form>
-                <div className="sign-up-header">Add a book</div>
+                <div>Add a book</div>
 
-                    <div className="form-group">
+                    <div>
                         <input
                             className="form-control"
                             id="title"
@@ -79,7 +79,7 @@ class AddToBookList extends React.Component{
                             required
                         />
                     </div>
-                    <div className="pull-right">
+                    <div>
                         <button
                         onClick={this.handleFormSubmit}
                         type="submit"

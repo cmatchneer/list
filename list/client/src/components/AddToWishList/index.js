@@ -46,9 +46,9 @@ class AddToWishList extends React.Component{
     render(){
         return(<div>
              <form>
-                <div className="sign-up-header">Add Your Wish List</div>
+                <div >Add Your Wish List</div>
 
-                    <div className="form-group">
+                    <div >
                         <input
                             className="form-control"
                             id="itemName"
@@ -81,7 +81,7 @@ class AddToWishList extends React.Component{
                         />
                         
                     </div>
-                    <div className="pull-right">
+                    <div >
                         <button
                         onClick={this.handleFormSubmit}
                         type="submit"

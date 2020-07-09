@@ -45,9 +45,9 @@ class AddToShoppingList extends React.Component{
     render(){
         return(<div>
              <form>
-                <div className="sign-up-header">Add to Shopping List</div>
+                <div >Add to Shopping List</div>
 
-                    <div className="form-group">
+                    <div >
                         <input
                             className="form-control"
                             id="itemName"
@@ -69,7 +69,7 @@ class AddToShoppingList extends React.Component{
                             required
                         />
                     </div>
-                    <div className="pull-right">
+                    <div >
                         <button
                         onClick={this.handleFormSubmit}
                         type="submit"

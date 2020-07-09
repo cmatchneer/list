@@ -14,8 +14,8 @@ class EachBook extends React.Component{
             this.setState({changesMade:true})
         })
     }
-    purchasedBook =(id)=>{
-        API.purchasedBook(id).then(response=>{
+    finishedBook =(id)=>{
+        API.finishedBook(id).then(response=>{
             console.log(response)
             this.setState({changesMade:true})
         })
@@ -24,11 +24,23 @@ class EachBook extends React.Component{
     render(){
         console.log(this.props);
         return(<div>
+        {this.props.finished?
+        <div>
             <h4>{this.props.title}</h4>
             <p>{this.props.author}</p>
             <p>{this.props.genre}</p>
-            <button onClick={()=>this.purchasedBook(this.props.id)}>Purchased</button>
+            <p>Already Read This</p>
             <button onClick={()=>this.deleteBook(this.props.id)}>Delete</button>
+        </div>
+        :
+        <div>
+            <h4>{this.props.title}</h4>
+            <p>{this.props.author}</p>
+            <p>{this.props.genre}</p>
+            <button onClick={()=>this.finishedBook(this.props.id)}>Finished</button>
+            <button onClick={()=>this.deleteBook(this.props.id)}>Delete</button>
+        </div>
+        }
         </div>)
     }
 }

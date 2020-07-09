@@ -27,7 +27,7 @@ export default{
     deleteBook(id){
         return axios.delete("/api/books/"+id)
     },
-    purchasedBook(id){
+    finishedBook(id){
         return axios.put("/api/books/purchased/"+id)
     },
     getCheckList(id){

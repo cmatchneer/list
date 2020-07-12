@@ -1,6 +1,7 @@
 import React from "react";
 import {Link,Redirect } from "react-router-dom";
 import API from "../../utils/API";
+import Dropdown from "../Dropdown"
 import "./style.css";
 
 
@@ -72,12 +73,17 @@ class Jumbotron extends React.Component{
         <div className="jumbotron">
             <div className="row">
                 <div className="col-md=4">
-                    <ul className="lead">
-                        <li><Link className="link"to="/">HomePage</Link></li>
-                        <li><Link className="link"to="/signup">Sign Up</Link></li>
-                        <li><Link className="link"to="/createList">Make A List</Link></li>
-                        <li><Link className="link"to="/profile">Profile</Link></li>
-                    </ul>
+                  <div class="dropdown">
+                    <h3>Navigation</h3>
+                    <div class="dropdown-content">
+                        <ul className="lead">
+                          <li><Link className="link"to="/">HomePage</Link></li>
+                          <li><Link className="link"to="/signup">Sign Up</Link></li>
+                          <li><Link className="link"to="/createList">Make A List</Link></li>
+                          <li><Link className="link"to="/profile">Profile</Link></li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
                 <div className="col-md-6">
                     <h1 className="display-4">List Maker</h1>

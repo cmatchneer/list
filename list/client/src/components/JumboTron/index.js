@@ -72,24 +72,25 @@ class Jumbotron extends React.Component{
                 
         <div className="jumbotron">
             <div className="row">
-                <div className="col-md=4">
-                  <div class="dropdown">
+                <div className="col-md=2">
+                  <div className="dropdown" id="nav">
                     <h3>Navigation</h3>
-                    <div class="dropdown-content">
+                    <div className="dropdown-content" id="nav-content">
                         <ul className="lead">
-                          <li><Link className="link"to="/">HomePage</Link></li>
-                          <li><Link className="link"to="/signup">Sign Up</Link></li>
-                          <li><Link className="link"to="/createList">Make A List</Link></li>
-                          <li><Link className="link"to="/profile">Profile</Link></li>
+                          <li><Link to="/"><button id="first-link" className="link">HomePage</button></Link></li>
+                          <li><Link to="/signup"><button  className="link">Sign Up</button></Link></li>
+                          <li><Link to="/createList"><button  className="link">Make A List</button></Link></li>
+                          <li><Link to="/profile"><button  className="link">Profile</button></Link></li>
                       </ul>
                     </div>
                   </div>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-7">
                     <h1 className="display-4">List Maker</h1>
                 </div>
+                <div className="col-md-1"></div>
       
-                <div className="col-md-3">
+                <div className="col-md-2">
                     {this.state.login?
                       <button onClick={this.logout} id="logout">Log Out</button>
                         :<form className="form-container">

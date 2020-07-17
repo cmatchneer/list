@@ -3,12 +3,14 @@
     font-weight: 100;
     font-size: 15px;
     float: left;
-    background: blue;
+    background:#026281;
     width:130px;
-    border: 5px,solid,red;
+    border: 2px double goldenrod;
     margin-top: 5px;
     box-shadow: 0 2px #999;
     color:white;
+    border-radius: 5px;
+    font-family: 'Indie Flower', cursive;
 }
 .link:active{
     background-color: #3e8e41;
@@ -51,7 +53,7 @@
 }
 #nav-content{
     width:30px;
-    background: red;
+    background: goldenrod;
     text-align: center;
     height: 150px;
 }

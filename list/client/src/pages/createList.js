@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import {BrowserRouter as Router, Redirect,Link} from "react-router-dom";
 import API from "../utils/API";
+import "./style.css";
 
 
 class CreateList extends Component {
@@ -73,20 +74,24 @@ render(){
     return(
         <div>
             {this.state.loggedIn? 
-            <div>
-            
-            <select value={this.state.catergory} onChange={this.handleChange}>
-                <option value="Book List">Book List</option>
-                <option value="Check List">Check List</option>
-                <option value="Collectables">Collectables</option>
-                <option value="Game List">Game List</option>
-                <option value="ShoppingList">Shopping List</option>
-                <option value="Wish List">Wish List</option>
-            </select>
+            <div id="wholeListPage">
+                <div className="col-md-12" >
+                <h5 id="dropdownType">List Type:</h5>
+                <select id="dropdownMenu" value={this.state.catergory} onChange={this.handleChange}>
+                    <option className="dropdownItems" value="Book List">Book List</option>
+                    <option value="Check List">Check List</option>
+                    <option value="Collectables">Collectables</option>
+                    <option value="Game List">Game List</option>
+                    <option value="ShoppingList">Shopping List</option>
+                    <option value="Wish List">Wish List</option>
+                </select>
+                
+                
             <form>
-                <div className="sign-up-header">List Name</div>
+           
+                <div id="listHeader"><h5>List Name:</h5></div>
 
-                    <div className="form-group">
+                    <div id="listForm">
                         <input
                             className="form-control"
                             id="name"
@@ -98,12 +103,14 @@ render(){
                             required
                         />
                     </div>
-                    <div className="pull-right">
-                        <button onClick={this.handleFormSubmit}type="submit"className="signup-Button">
+                    <div >
+                        <button id="listButton" onClick={this.handleFormSubmit}type="submit"className="signup-Button">
                         SUBMIT
                         </button>
                     </div>
+                    
                 </form>
+                </div>
             </div>
            : <p>need to login</p> }
         </div>

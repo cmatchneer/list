@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 // import Button from "../components/Button";
-
 import {BrowserRouter as Router, Redirect,Link} from 'react-router-dom';
 import "./style.css";
 class Login extends Component {
@@ -14,7 +13,7 @@ class Login extends Component {
                   keep track of the stuff you have well then join us here at Make A List. Already part of our team then sign
                   in above
                 </p>
-                <Link id= "signUpLandingPage"className="link"to="/signup"><button id= "signUpLandingPage" >Sign Up</button> </Link>
+                <Link to="/signup"><button className="link" id= "signUpLandingPage" >Sign Up</button> </Link>
               </div>
          
         

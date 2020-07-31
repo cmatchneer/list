@@ -41,15 +41,21 @@ class AddToBookList extends React.Component{
         event.preventDefault();
         this.addBook();
     };
+    deleteList =(id)=>{
+        API.deleteList(id).then(response=>{
+            console.log(response)
+        })
+    }
     render(){
         
         return(<div>
-             <form>
-                <div>Add a book</div>
+             <form class="add_book">
+                <div></div>
+                    <p class="formTitle">Add a book</p>
 
                     <div>
                         <input
-                            className="form-control"
+                            className="bookForm"
                             id="title"
                             type="text"
                             value={this.state.title}
@@ -59,7 +65,7 @@ class AddToBookList extends React.Component{
                             required
                         />
                         <input
-                            className="form-control"
+                            className="bookForm"
                             id="author"
                             type="text"
                             value={this.state.author}
@@ -69,7 +75,7 @@ class AddToBookList extends React.Component{
                             required
                         />
                         <input
-                            className="form-control"
+                            className="bookForm"
                             id="genre"
                             type="text"
                             value={this.state.genre}
@@ -83,13 +89,15 @@ class AddToBookList extends React.Component{
                         <button
                         onClick={this.handleFormSubmit}
                         type="submit"
-                        className="signup-Button"
+                        className="addToList"
                         >
-                        SUBMIT
+                        Add to List
                         </button>
                         
+                        <button class="deleteList" onClick={()=>this.deleteList(this.props.id)}>Delete</button>
                     </div>
                 </form>
+                
         </div>)
     }
 }

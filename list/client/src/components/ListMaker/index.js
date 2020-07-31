@@ -114,7 +114,7 @@ class ListMaker extends React.Component{
         if(this.props.category === "Book List"){
             return(
             <div>
-                 <h4>{this.props.category}</h4>
+                 <h4 class="category">{this.props.category}</h4>
                 {this.state.item.map(item =>{
                     if(this.props.category === "Book List"){
                         return(<div>    
@@ -129,12 +129,12 @@ class ListMaker extends React.Component{
                         }
                 })}
                 <AddToBookList id={this.props.id} />
-                <button onClick={()=>this.deleteList(this.props.id)}>Delete</button>
+                 
             </div>)
         }
         if(this.props.category === "Check List"){
             return(<div>
-                <h4>{this.props.category}</h4>
+                <h4 class="category">{this.props.category}</h4>
                 {this.state.item.map(item =>{
                     if(this.props.category === "Check List"){
                         return(<div>
@@ -147,13 +147,13 @@ class ListMaker extends React.Component{
                         }
                 })}
                 <AddToCheckList id={this.props.id} />
-                <button onClick={()=>this.deleteList(this.props.id)}>Delete</button>
+                <button class="deleteList" onClick={()=>this.deleteList(this.props.id)}>Delete</button>
                 
             </div>)
         }
         if(this.props.category==="Collectables"){
             return(<div>
-                  <h4>{this.props.category}</h4>
+                  <h4 class="category">{this.props.category}</h4>
                 {this.state.item.map(item =>{
                     if(this.props.category === "Collectables"){
                         return(<div>
@@ -167,13 +167,13 @@ class ListMaker extends React.Component{
                         }
                 })}
                 <AddCollectable id={this.props.id}/>
-                <button onClick={()=>this.deleteList(this.props.id)}>Delete</button>
+                <button class="deleteList" onClick={()=>this.deleteList(this.props.id)}>Delete</button>
             </div>
             )
         }
         if(this.props.category === "Game List"){
             return(<div>
-                <h4>{this.props.category}</h4>
+                <h4 class="category">{this.props.category}</h4>
                 {this.state.item.map(item =>{
                     if(this.props.category === "Game List"){
                        
@@ -188,12 +188,12 @@ class ListMaker extends React.Component{
                     }
                 })}
                 <AddGame id={this.props.id}/>
-                <button onClick={()=>this.deleteList(this.props.id)}>Delete</button>
+                <button class="deleteList" onClick={()=>this.deleteList(this.props.id)}>Delete</button>
             </div>)
         }
         if(this.props.category=== "ShoppingList"){
             return(<div>
-                <h4>{this.props.category}</h4>
+                <h4 class="category">{this.props.category}</h4>
                 {this.state.item.map(item =>{
                     if(this.props.category === "ShoppingList"){
                         return(<div>
@@ -207,12 +207,12 @@ class ListMaker extends React.Component{
                     }
                 })}
                 <AddToShoppingList id={this.props.id}/>
-                <button onClick={()=>this.deleteList(this.props.id)}>Delete</button>
+                <button class="deleteList" onClick={()=>this.deleteList(this.props.id)}>Delete</button>
             </div>)
         }
         if(this.props.category=== "Wish List"){
             return(<div>
-                <h4>{this.props.category}</h4>
+                <h4 class="category">{this.props.category}</h4>
                 {this.state.item.map(item =>{
                     if(this.props.category === "Wish List"){
                         
@@ -228,7 +228,7 @@ class ListMaker extends React.Component{
                     }
                 })}
                 <AddToWishList id={this.props.id}/>
-                <button onClick={()=>this.deleteList(this.props.id)}>Delete</button>
+                <button class="deleteList" onClick={()=>this.deleteList(this.props.id)}>Delete</button>
             </div>)
         }
         return(<div>

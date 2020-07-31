@@ -56,7 +56,7 @@ render(){
                     console.log(list)
                     return(<div>
                         <div class="dropdown">
-                            <h2>{list.listName}</h2>
+                            <h2 id="name">{list.listName}</h2>
                             <div class="dropdown-content">
                                 <ListMaker
                                     id={list.id}

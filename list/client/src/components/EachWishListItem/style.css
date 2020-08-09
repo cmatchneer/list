@@ -1,0 +1,25 @@
+.itemName{
+    font-family: 'Oswald', sans-serif;
+    border:2px ridge brown;
+    text-align: center;
+    padding-bottom:1px;
+    border-radius: 4px;
+}
+.itemType{
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    border:2px ridge brown;
+    border-radius: 4px;
+}
+.itemCategory{
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    border:2px ridge brown;
+    border-radius: 4px;
+}
+#deleteItem{
+    margin-left: 10px;
+}
+#buy{
+    margin-left:10px;
+}

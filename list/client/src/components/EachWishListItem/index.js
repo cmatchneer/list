@@ -21,24 +21,22 @@ class EachWishListItem extends React.Component{
     render(){
         console.log(this.props)
         return(<div>
-            {this.props.done?
-                <div>
-                    <h4>{this.props.name}</h4>
-                    <p>{this.props.type}</p>
-                    <p>{this.props.category}</p>
-                    <p>Done</p>
-                    <button onClick={()=>this.deleteItem(this.props.id)}>Delete</button>
+            
+                <div class="container">
+                    <h5 class="itemName">{this.props.name}</h5>
+                    <p class="itemType">{this.props.type}</p>
+                    <p class="itemCategory">{this.props.category}</p>
+                    {this.props.done?
+                    <div>
+                        <p class="done">Owned</p>
+                    </div>
+                    :<div>
+                        <p class="done">Not Owned</p>
+                        <button id="buy"class="finish" onClick={()=>this.purchasedItem(this.props.id)}>Buy</button>
+                    </div>}
+                    <button id="deleteItem"class="delete" onClick={()=>this.deleteItem(this.props.id)}>Delete</button>
                 </div>
-            :
-                <div>
-                    <h4>{this.props.name}</h4>
-                    <p>{this.props.type}</p>
-                    <p>{this.props.category}</p>
-                    <p>not done</p>
-                    <button onClick={()=>this.deleteItem(this.props.id)}>Delete</button>
-                    <button onClick={()=>this.purchasedItem(this.props.id)}>Buy</button>
-                </div>
-            }
+            
 
         </div>)
     }

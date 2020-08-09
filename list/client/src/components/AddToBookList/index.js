@@ -85,7 +85,7 @@ class AddToBookList extends React.Component{
                             required
                         />
                     </div>
-                    <div>
+                    <div class="buttons">
                         <button
                         onClick={this.handleFormSubmit}
                         type="submit"

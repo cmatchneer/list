@@ -42,15 +42,19 @@ class AddToWishList extends React.Component{
         event.preventDefault();
         this.wishListItem();
     };
-    
+    deleteList =(id)=>{
+        API.deleteList(id).then(response=>{
+            console.log(response)
+        })
+    }
     render(){
         return(<div>
-             <form>
-                <div >Add Your Wish List</div>
+             <form class="add_wishList">
+                <div class="formTitle" >Add Your Wish List</div>
 
                     <div >
                         <input
-                            className="form-control"
+                            className="wishListForm"
                             id="itemName"
                             type="text"
                             value={this.state.itemName}
@@ -60,7 +64,7 @@ class AddToWishList extends React.Component{
                             required
                         />
                         <input
-                            className="form-control"
+                            className="wishListForm"
                             id="itemType"
                             type="text"
                             value={this.state.itemType}
@@ -70,7 +74,7 @@ class AddToWishList extends React.Component{
                             required
                         />
                         <input
-                            className="form-control"
+                            className="wishListForm"
                             id="category"
                             type="text"
                             value={this.state.category}
@@ -81,14 +85,16 @@ class AddToWishList extends React.Component{
                         />
                         
                     </div>
-                    <div >
+                    <div class="buttons">
                         <button
                         onClick={this.handleFormSubmit}
                         type="submit"
-                        className="signup-Button"
+                        id="addToWishList"
+                        
                         >
-                        SUBMIT
+                        Add To List
                         </button>
+                        <button class="deleteList" onClick={()=>this.deleteList(this.props.id)}>Delete</button>
                     </div>
                 </form>
         </div>)

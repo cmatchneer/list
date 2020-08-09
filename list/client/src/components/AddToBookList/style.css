@@ -1,5 +1,6 @@
 .addToList{
-    float: left;
+    /* float: left; */
+    display:inline-block;
     margin-right: 32px;
     margin-bottom: 3px;
     border:2px ridge brown;
@@ -17,7 +18,7 @@
     transform: translateY(3px);
 }
 .deleteList{
-    /* float: left; */
+    
     margin: 0 auto;
     margin-bottom: 3px;
     border:2px ridge brown;
@@ -27,18 +28,21 @@
     color:goldenrod;
     box-shadow: 0 2px #999;
     text-align: center;
+    display:inline-block;
 }
 .deleteList:active{
     background-color: brown;
     box-shadow: 0 0px #666;
     transform: translateY(3px);
 }
+
 .add_book{
     background-color: goldenrod;
     border:2px ridge #026281;
     padding: 5px;
     width:200px;
     margin-top:5px;
+    
 }
 .bookForm{
     margin: 5px;
@@ -51,7 +55,7 @@
     text-align: center;
     border: 2px ridge brown;
     border-radius: 4px;
-    
+    font-family: 'Oswald', sans-serif;
 }
 #title{
     font-family: 'Indie Flower', cursive;
@@ -61,4 +65,8 @@
 }
 #genre{
     font-family: 'Roboto', sans-serif;
+}
+.buttons{
+    white-space: nowrap;
+    overflow-x: auto;
 }

@@ -1,0 +1,30 @@
+.add_collectable{
+    background-color: goldenrod;
+    border:2px ridge #026281;
+    padding: 5px;
+    width:200px;
+    margin-top:5px;
+}
+.collectableForm{
+    margin: 5px;
+    text-align: center;
+    border:2px ridge brown;
+    width:180px;
+}
+.formCollectable{
+    text-align: center;
+    border: 2px ridge brown;
+    border-radius: 4px;
+    font-family: 'Oswald', sans-serif;
+}
+.checkbox{
+    white-space: nowrap;
+    overflow-x: auto;
+}
+.limitedTitle{
+    display:inline-block;
+    margin-right: 3px;
+}
+#limitedEdition{
+    display: inline-block;
+}

@@ -49,14 +49,19 @@ class AddCollectable extends React.Component{
         });
         console.log(this.state.limitedEdition);
     }
+    deleteList =(id)=>{
+        API.deleteList(id).then(response=>{
+            console.log(response)
+        })
+    }
     render(){
         return(<div>
-             <form>
-                <div >Add a Collectable</div>
-
+             <form class="add_collectable">
+                
+                    <p class="formCollectable">Add a Collectable</p>
                     <div >
                         <input
-                            className="form-control"
+                            className="collectableForm"
                             id="itemName"
                             type="text"
                             value={this.state.itemName}
@@ -66,7 +71,7 @@ class AddCollectable extends React.Component{
                             required
                         />
                         <input
-                            className="form-control"
+                            className="collectableForm"
                             id="itemType"
                             type="text"
                             value={this.state.itemType}
@@ -75,7 +80,8 @@ class AddCollectable extends React.Component{
                             onChange={this.handleInputChange}
                             required
                         />
-                        <p>Limited Edition</p>
+                    <div class="checkbox">
+                        <p class="limitedTitle">Limited Edition</p>
                         <input
                           type="checkbox"
                           id="limitedEdition"
@@ -85,14 +91,16 @@ class AddCollectable extends React.Component{
                           
                         />
                     </div>
-                    <div >
+                    </div>
+                    <div class="buttons">
                         <button
                         onClick={this.handleFormSubmit}
                         type="submit"
-                        className="signup-Button"
+                        className="addToList"
                         >
                         SUBMIT
                         </button>
+                        <button class="deleteList" onClick={()=>this.deleteList(this.props.id)}>Delete</button>
                     </div>
                 </form>
         </div>)

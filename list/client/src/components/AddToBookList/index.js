@@ -50,7 +50,7 @@ class AddToBookList extends React.Component{
         
         return(<div>
              <form class="add_book">
-                <div></div>
+                
                     <p class="formTitle">Add a book</p>
 
                     <div>

@@ -21,17 +21,17 @@ class EachCheckListItem extends React.Component{
     render(){
         console.log(this.props);
         return(
-            <div>
+            <div class="container">
                 {this.props.done? 
                 <div>
-                    <div style={{backgroundColor: "green"}}><p>{this.props.task}</p></div>
-                    <button onClick={()=>this.deleteItem(this.props.id)}>Delete</button>
+                    <div style={{backgroundColor: "green"}}><p class="checkItem">{this.props.task}</p></div>
+                    <button class="delete" onClick={()=>this.deleteItem(this.props.id)}>Delete</button>
                 </div>
                 :
                 <div>
-                    <div style={{backgroundColor:"red"}}><p>{this.props.task}</p></div>
-                    <button onClick={()=>this.finishedItem(this.props.id)}>Completed</button>
-                    <button onClick={()=>this.deleteItem(this.props.id)}>Delete</button>
+                    <div style={{backgroundColor:"red"}}><p class="checkItem">{this.props.task}</p></div>
+                    <button class="finish" id="checkListFinish"onClick={()=>this.finishedItem(this.props.id)}>Completed</button>
+                    <button class="delete" onClick={()=>this.deleteItem(this.props.id)}>Delete</button>
                 </div>
                 }
                 

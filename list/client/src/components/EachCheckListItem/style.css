@@ -1,0 +1,10 @@
+.checkItem{
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    border:2px ridge brown;
+    border-radius: 4px;
+}
+
+#checkListFinish{
+    margin-right: 35px;
+}

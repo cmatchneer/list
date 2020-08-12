@@ -1,0 +1,13 @@
+.add_checkList{
+    background-color: goldenrod;
+    border:2px ridge #026281;
+    padding: 5px;
+    width:200px;
+    margin-top:5px;
+}
+.checkForm{
+    margin: 5px;
+    text-align: center;
+    border:2px ridge brown;
+    width:180px;
+}

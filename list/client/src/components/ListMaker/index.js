@@ -147,7 +147,7 @@ class ListMaker extends React.Component{
                         }
                 })}
                 <AddToCheckList id={this.props.id} />
-                <button class="deleteList" onClick={()=>this.deleteList(this.props.id)}>Delete</button>
+               
                 
             </div>)
         }

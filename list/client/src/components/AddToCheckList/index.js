@@ -34,15 +34,20 @@ class AddToCheckList extends React.Component{
         event.preventDefault();
         this.addItem();
     }
+    deleteList =(id)=>{
+        API.deleteList(id).then(response=>{
+            console.log(response)
+        })
+    }
     render(){
         return(
             <div>
-                 <form>
-                <div >Add to Check List</div>
-
+                 <form class="add_checkList"> 
+                <div ></div>
+                    <p class="formTitle">Add to Check List</p>
                     <div >
                         <input
-                            className="form-control"
+                            className="checkForm"
                             id="task"
                             type="text"
                             value={this.state.task}
@@ -53,14 +58,15 @@ class AddToCheckList extends React.Component{
                         />
                      
                     </div>
-                    <div >
+                    <div class="buttons">
                         <button
                         onClick={this.handleFormSubmit}
                         type="submit"
-                        className="signup-Button"
+                        className="addToList"
                         >
                         SUBMIT
                         </button>
+                        <button class="deleteList" onClick={()=>this.deleteList(this.props.id)}>Delete</button>
                     </div>
                 </form>
             </div>

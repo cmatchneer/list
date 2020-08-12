@@ -14,21 +14,19 @@ class EachCollectable extends React.Component{
         })
     }
     render(){
-        return(<div>
-            {this.props.limitedEdition?
-                <div>
-                    <h4>{this.props.itemName}</h4>
-                    <p>{this.props.itemType}</p>
-                    <p>Limited Edition</p>
-                    <button onClick={()=>this.deleteCollectables(this.props.id)}>Delete</button>
+        return(<div >
+            
+                <div class="container">
+                    <h5 class="title">{this.props.itemName}</h5>
+                    <div class="box">
+                    <p id="collect" class="item">{this.props.itemType}</p>
+                    {this.props.limitedEdition?
+                        <img class="itsLimited" src="https://previews.123rf.com/images/alexwhite/alexwhite1710/alexwhite171001332/88258700-limited-edition-red-glossy-round-web-icon-circle-isolated-internet-button-for-webdesign-and-smartpho.jpg"/>:console.log("place holder")}
+                    </div>
+                    <button class="delete" onClick={()=>this.deleteCollectables(this.props.id)}>Delete</button>
                 </div>
-            :
-                <div>
-                    <h4>{this.props.itemName}</h4>
-                    <p>{this.props.itemType}</p>
-                    <button onClick={()=>this.deleteCollectables(this.props.id)}>Delete</button>
-                </div>
-            }
+            
+            
         </div>)
     }
 }

@@ -1,0 +1,23 @@
+.item{
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    border:2px ridge brown;
+    border-radius: 4px;
+    width:50px;
+    text-align: center;
+    margin: 0 auto;
+    display:inline-block;
+}
+.itsLimited{
+    width:70px;
+    height:30px;
+    margin-left:70px;
+    display:inline-block;
+}
+#collect{
+    margin-bottom:5px; 
+}
+.box{
+    white-space: nowrap;
+    overflow-x: auto;
+}

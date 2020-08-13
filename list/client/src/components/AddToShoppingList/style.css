@@ -1,0 +1,16 @@
+.add_shopping{
+    background-color: goldenrod;
+    border:2px ridge #026281;
+    padding: 5px;
+    width:200px;
+    margin-top:5px;  
+}
+.shoppingForm{
+    margin: 5px;
+    text-align: center;
+    border:2px ridge brown;
+    width:180px; 
+}
+#shoppingTitle{
+    margin-bottom:2px;
+}

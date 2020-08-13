@@ -22,18 +22,20 @@ class EachShoppingItem extends React.Component{
         
         return(<div>
             {this.props.purchased?
-                <div style={{backgroundColor: "green"}}>
-                    <h4>{this.props.name}</h4>
-                    <p>Bought</p>
-                    <button onClick={()=>this.deleteItem(this.props.id)}>Delete</button>
+                <div class="noneActive">
+                    <p class="shoppingName">{this.props.name}</p>
+                    <button class="itemDelete" onClick={()=>this.deleteItem(this.props.id)}>Delete</button>
                 </div>
             :
-                <div style={{backgroundColor: "red"}}>
-                    <h4>{this.props.name}</h4>
-                    <p>{this.props.amount}</p>
-                    <button onClick={()=>this.deleteItem(this.props.id)}>Delete</button>
-                    <button onClick={()=>this.purchasedItem(this.props.id)}>Owned</button>
+                <div class="active">
+                    <p class="shoppingName">{this.props.name}</p>
+                    <p class="shoppingAmount">{this.props.amount}</p>
+                    <div id="shoppingButtons" class="buttons">
+                     <button class="itemDelete" onClick={()=>this.deleteItem(this.props.id)}>Delete</button>
+                    <button class="shoopingItemPurchase"onClick={()=>this.purchasedItem(this.props.id)}>Done</button>
                 </div>
+                </div>
+                
             }
 
         </div>)

@@ -41,15 +41,21 @@ class AddToShoppingList extends React.Component{
         event.preventDefault();
         this.item();
     };
+    deleteList =(id)=>{
+        API.deleteList(id).then(response=>{
+            console.log(response)
+        })
+    }
    
     render(){
         return(<div>
-             <form>
-                <div >Add to Shopping List</div>
+             <form class="add_shopping">
+                
+                <p id="shoppingTitle"class="formTitle">Add to Shopping List</p>
 
                     <div >
                         <input
-                            className="form-control"
+                            className="shoppingForm"
                             id="itemName"
                             type="text"
                             value={this.state.itemName}
@@ -59,7 +65,7 @@ class AddToShoppingList extends React.Component{
                             required
                         />
                         <input
-                            className="form-control"
+                            className="shoppingForm"
                             id="amount"
                             type="number"
                             value={this.state.amount}
@@ -69,14 +75,15 @@ class AddToShoppingList extends React.Component{
                             required
                         />
                     </div>
-                    <div >
+                    <div class="buttons">
                         <button
                         onClick={this.handleFormSubmit}
                         type="submit"
-                        className="signup-Button"
+                        className="addToList"
                         >
                         SUBMIT
                         </button>
+                        <button class="deleteList" onClick={()=>this.deleteList(this.props.id)}>Delete</button>
                     </div>
                 </form>
         </div>)

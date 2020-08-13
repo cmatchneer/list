@@ -207,7 +207,7 @@ class ListMaker extends React.Component{
                     }
                 })}
                 <AddToShoppingList id={this.props.id}/>
-                <button class="deleteList" onClick={()=>this.deleteList(this.props.id)}>Delete</button>
+                
             </div>)
         }
         if(this.props.category=== "Wish List"){

@@ -1,0 +1,26 @@
+.addGame{
+    background-color: goldenrod;
+    border:2px ridge #026281;
+    padding: 5px;
+    width:200px;
+    margin-top:5px;
+    text-align: center;
+}
+.gameForm{
+    margin: 5px;
+    text-align: center;
+    border:2px ridge brown;
+    width:180px;
+    text-align: center;
+    
+}
+.ownIt{
+    display:inline-block;
+    margin-right: 3px;
+}
+#owned{
+    display: inline-block;
+}
+#gameTitle{
+    margin-bottom:2px;
+}

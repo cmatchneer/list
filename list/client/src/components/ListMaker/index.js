@@ -188,7 +188,7 @@ class ListMaker extends React.Component{
                     }
                 })}
                 <AddGame id={this.props.id}/>
-                <button class="deleteList" onClick={()=>this.deleteList(this.props.id)}>Delete</button>
+                
             </div>)
         }
         if(this.props.category=== "ShoppingList"){

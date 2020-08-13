@@ -50,15 +50,20 @@ class AddGame extends React.Component{
         });
         console.log(this.state.limitedEdition);
     }
+    deleteList =(id)=>{
+        API.deleteList(id).then(response=>{
+            console.log(response)
+        })
+    }
     render(){
         return(<div>
-             <form>
-                <div >Add a Game</div>
-
+             <form class="addGame"> 
+                
+                <p id="gameTitle" class="formTitle">Add a Game</p>
                     <div >
                         <input
-                            className="form-control"
-                            id="title"
+                            className="gameForm"
+                            id="gameTitle"
                             type="text"
                             value={this.state.title}
                             placeholder="title"
@@ -67,7 +72,7 @@ class AddGame extends React.Component{
                             required
                         />
                         <input
-                            className="form-control"
+                            className="gameForm"
                             id="type"
                             type="text"
                             value={this.state.type}
@@ -76,7 +81,8 @@ class AddGame extends React.Component{
                             onChange={this.handleInputChange}
                             required
                         />
-                        <p>Do You Own the Game</p>
+                        <div class="checkbox">
+                        <p class="ownIt">Do You Own the Game</p>
                         <input
                           type="checkbox"
                           id="owned"
@@ -85,15 +91,17 @@ class AddGame extends React.Component{
                           checked={this.state.owned}
                           
                         />
+                        </div>
                     </div>
-                    <div >
+                    <div class="buttons">
                         <button
                         onClick={this.handleFormSubmit}
                         type="submit"
-                        className="signup-Button"
+                        className="addToList"
                         >
                         SUBMIT
                         </button>
+                        <button class="deleteList" onClick={()=>this.deleteList(this.props.id)}>Delete</button>
                     </div>
                 </form>
         </div>)

@@ -28,12 +28,16 @@ class EachGame extends React.Component{
                     {this.props.owned?
                     <div>
                         <p class="done">Owned</p>
-                        <button class="finish" onClick={()=>this.purchasedGame(this.props.id)}>Owned</button>
+                        
+                        <button class="delete" onClick={()=>this.deleteGame(this.props.id)}>Delete</button>
                     </div>
                     :
-                    console.log("holding")
+                    <div class= "buttons">
+                        <button class="finish" onClick={()=>this.purchasedGame(this.props.id)}>Owned</button>
+                        <button class="delete" onClick={()=>this.deleteGame(this.props.id)}>Delete</button>
+                    </div>
                     }
-                    <button class="delete" onClick={()=>this.deleteGame(this.props.id)}>Delete</button>
+                    
                 </div>
         </div>)
     }

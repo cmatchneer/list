@@ -61,7 +61,20 @@
     position: relative;
     left:60px;
     top:30px;
+    border:2px ridge brown;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+    background: #026281;
+    color:goldenrod;
+    box-shadow: 0 2px #999;
+    text-align: center;
 }
 #first-link{
     margin-top:0px;
+}
+
+#logout:active{
+    background-color: brown;
+    box-shadow: 0 0px #666;
+    transform: translateY(3px);
 }

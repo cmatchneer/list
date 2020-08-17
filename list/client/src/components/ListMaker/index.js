@@ -25,6 +25,9 @@ class ListMaker extends React.Component{
     componentDidMount=()=>{
         this.createList(this.props.category)
     }
+    componentDidUpdate =()=>{
+        this.createList(this.props.category)
+    }
     createList = (category)=>{
         
         switch(category){

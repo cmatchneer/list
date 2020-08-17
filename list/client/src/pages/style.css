@@ -1,3 +1,6 @@
+body{
+    background-color: black;
+}
 .landing{
     background-color: black;
     color:white;
@@ -21,8 +24,8 @@
 #listForm{
     float: left;
     margin-left: 5px;
-    width:10%;
-    margin-top: 12px;
+    width:20%;
+    margin-top: 4px;
 }
 #listButton{
     margin-left: .5%;
@@ -36,7 +39,7 @@
 }
 #dropdownType{
     float: left;
-    margin-left: 25%;
+    margin-left: 15%;
     margin-top: 12px;
     font-family: 'Oswald', sans-serif;
     color:black;
@@ -54,7 +57,8 @@
     border:2px solid goldenrod;
     background-color: #026281;
     height:50px;
-
+    width:50%;
+    margin: 0 auto;
 }
 #loggedInText{
     margin: 0 auto;
@@ -81,6 +85,7 @@
     left:50%;
     background-color: blue;
 }
+/* Profile page styles */
 .dropdown {
     position: relative;
     display: inline-block;
@@ -107,5 +112,10 @@
   }
   #name{
       font-family: 'Oswald', sans-serif;
+      background-color: #026281;
+      padding: 5px;
+      border:2px solid #A89847;
+      border-radius: 5px;
+      color:#003319;
   }
 

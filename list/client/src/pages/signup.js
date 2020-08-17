@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import {BrowserRouter as Router, Redirect,Link} from "react-router-dom";
 import API from "../utils/API";
+import "./style.css";
 
 class Signup extends Component {
     constructor(props){
